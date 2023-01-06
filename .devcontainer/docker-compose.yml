@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  loc-phoenix-dev-container:
+    build: .
+    init: true
+    privileged: true
+    command: sleep infinity
+    volumes:
+      - ..:/home/vscode/workspace:cached
+  postgres:
+    image: postgres:13.5-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
