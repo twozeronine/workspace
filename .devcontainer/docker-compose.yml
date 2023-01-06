@@ -6,6 +6,7 @@ services:
     init: true
     privileged: true
     command: sleep infinity
+    network_mode: service:postgres
     volumes:
       - ..:/home/vscode/workspace:cached
   postgres:
@@ -13,5 +14,3 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: postgres
-    ports:
-      - "5432:5432"

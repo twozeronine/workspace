@@ -15,9 +15,10 @@
         }
     },
     "features": {},
-    "forwardPorts": [8080],
+    "forwardPorts": [8080,5432],
     "portsAttributes": {
-        "8080": {"label": "phoenix-app"}
+        "8080": {"label": "phoenix-app"},
+        "5432":{"label": "postgres"}
     },
     "remoteUser": "root",
     "shutdownAction": "stopCompose"
